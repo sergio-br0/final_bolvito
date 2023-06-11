@@ -53,7 +53,7 @@ require '../../modelos/empleado.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_bolvito/controladores/empleados/buscar.php?empleado_nombre=<?= $_POST['empleado_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_bolvito/controladores/empleados/buscar.php?emp_nombre=<?= $_POST['emp_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

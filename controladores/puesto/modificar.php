@@ -53,7 +53,7 @@ require '../../modelos/Puestos.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_bolvito/controladores/puesto/buscar.php?puesto_nombre=<?= $_POST['puesto_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_bolvito/controladores/puesto/buscar.php?pue_descripcion=<?= $_POST['pue_descripcion'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
