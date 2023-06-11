@@ -11,7 +11,7 @@
                         <input type="text" name="pue_descripcion" id="pue_descripcion" class="form-control">
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-3"> 
                     <div class="col">
                         <label for="pue_sueldo">Sueldo</label>
                         <input type="number" name="pue_sueldo" id="pue_sueldo" class="form-control">
