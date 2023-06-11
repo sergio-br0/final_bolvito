@@ -45,10 +45,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_bolvito/vistas/Puestos/index.php">Crear puesto</a>
+                            <a class="nav-link" href="/final_bolvito/vistas/puestos/index.php">Crear puesto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_bolvito/vistas/Puestos/buscar.php">Buscar puesto</a>
+                            <a class="nav-link" href="/final_bolvito/vistas/puestos/buscar.php">Buscar puesto</a>
                         </li>
                     </ul>
                 </li>
