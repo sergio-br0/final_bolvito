@@ -1,12 +1,12 @@
 <?php
-require '../../modelos/empleado.php';
+require '../../modelos/puesto.php';
 
 
-if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_id_sexo'] != ''){
+if($_POST['pue_descripcion'] != '' && $_POST['pue_sueldo'] != ''){
     
     try {
-        $empleado = new Empleado($_POST);
-        $resultado = $empleado->guardar();
+        $puesto = new Puesto($_POST);
+        $resultado = $puesto->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -52,7 +52,7 @@ if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puest
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_bolvito/vistas/empleado/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_bolvito/vistas/puesto/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
