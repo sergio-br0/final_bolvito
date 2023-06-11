@@ -10,8 +10,6 @@ class Empleado extends Conexion{
     public $emp_sexo;
     public $emp_situacion;
 
-
-
     public function __construct($args = [] )
     {
         $this->emp_id = $args['emp_id'] ?? null;
