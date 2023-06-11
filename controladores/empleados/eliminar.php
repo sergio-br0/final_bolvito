@@ -1,21 +1,17 @@
 <?php
-require '../../modelos/Empleado.php';
+require '../../modelos/empleado.php';
 
 
-if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_id_sexo'] != ''){
-    
     try {
-        $empleado = new Empleado($_POST);
-        $resultado = $empleado->guardar();
-        $error = "NO se guardó correctamente";
+        $empleado = new Empleado($_GET);
+        $resultado = $empleado->eliminar();
+
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }
-}else{
-    $error = "Debe llenar todos los datos";
-}
+
 
 
 // if($resultado){
@@ -40,7 +36,7 @@ if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puest
             <div class="col-lg-6">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        Guardado exitosamente!
+                        Eliminado exitosamente!
                     </div>
                 <?php else :?>
                     <div class="alert alert-danger" role="alert">
@@ -52,9 +48,10 @@ if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puest
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_bolvito/vistas/empleado/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_bolvito/controladores/empleados/buscar.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
 </body>
 </html>
+
