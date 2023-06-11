@@ -1,6 +1,23 @@
-
+<?php
+require_once '../../modelos/Empleado.php';
+require_once '../../modelos/Area.php';
+    try {
+        $empleado = new Empleado();
+        $producto = new Area();
+        $empleados = $empleado->buscar();
+        $areas = $area->buscar();
+            // var_dump($clientes);
+            // exit;
+    } catch (PDOException $e) {
+        $error = $e->getMessage();
+    } catch (Exception $e2){
+        $error = $e2->getMessage();
+    }
+    ?>
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
+
+
     <div class="container">
         <h1 class="text-center">Ingresar Empleado</h1>
         <div class="row justify-content-center">

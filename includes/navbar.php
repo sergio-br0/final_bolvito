@@ -31,10 +31,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_bolvito/vistas/areas/index.php">Crear area</a>
+                            <a class="nav-link" href="/final_bolvito/vistas/area/index.php">Crear area</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_bolvito/vistas/areas/buscar.php">Buscar area</a>
+                            <a class="nav-link" href="/final_bolvito/vistas/area/buscar.php">Buscar area</a>
                         </li>
                     </ul>
                 </li>
