@@ -6,8 +6,6 @@ class Area extends Conexion{
     public $area_nombre;
     public $area_situacion;
 
-
-
     public function __construct($args = [] )
     {
         $this->area_id = $args['area_id'] ?? null;
