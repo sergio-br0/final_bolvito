@@ -1,11 +1,11 @@
 <?php
-require '../../modelos/Empleado.php';
+require '../../modelos/Puestos.php';
 try {
-    $empleado = new Empleado($_GET);
+    $puesto = new Puesto($_GET);
     
-    $empleados = $empleado->buscar();
+    $puestos = $puesto->buscar();
     // echo "<pre>";
-    // var_dump($empleados);
+    // var_dump($puestos);
     // echo "</pre>";
     // exit;
     // $error = "NO se guardó correctamente";
@@ -33,25 +33,21 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>NOMBRE</th>
-                            <th>DPI</th>
-                            <th>PUESTO</th>
-                            <th>EDAD</th>
+                            <th>DESCRIPCION</th>
+                            <th>SUELDO</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($empleados) > 0):?>
-                        <?php foreach($empleados as $key => $empleado) : ?>
+                        <?php if(count($puestos) > 0):?>
+                        <?php foreach($puestos as $key => $puesto) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $empleado['EMP_NOMBRE'] ?></td>
-                            <td><?= $empleado['EMP_DPI'] ?></td>
-                            <td><?= $empleado['EMP_PUESTO'] ?></td>
-                            <td><?= $empleado['EMP_EDAD'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/empleados/modificar.php?emp_id=<?= $empleado['EMP_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_bolvito/controladores/empleados/eliminar.php?emp_id=<?= $empleado['EMP_ID']?>">Eliminar</a></td>
+                            <td><?= $puesto['PUE_DESCRIPCION'] ?></td>
+                            <td><?= $puesto['PUE_SUELDO'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/puestos/modificar.php?pue_id=<?= $puesto['PUE_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_bolvito/controladores/puestos/eliminar.php?pue_id=<?= $puesto['PUE_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -65,7 +61,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_bolvito/vistas/empleados/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_bolvito/vistas/puestos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
