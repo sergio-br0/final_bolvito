@@ -1,27 +1,22 @@
 <?php
-require_once '../../modelos/Empleado.php';
-require_once '../../modelos/Area.php';
+require '../../modelos/Asignacion_area.php';
     try {
-        $empleado = new Empleado();
-        $producto = new Area();
-        $empleados = $empleado->buscar();
-        $areas = $area->buscar();
-            // var_dump($clientes);
-            // exit;
+        $asignacion_area = new Asignacion_area($_GET);
+
+        $asignacion_areas = $asignacion_area->buscar();
+
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }
-    ?>
+?>
 <?php include_once '../../includes/header.php'?>
-<?php include_once '../../includes/navbar.php'?>
-
-
     <div class="container">
-        <h1 class="text-center">Asignar Area</h1>
+        <h1 class="text-center">Modificar Asignacion de Empleados</h1>
         <div class="row justify-content-center">
-            <form action="/final_bolvito/controladores/empleados/guardar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/final_bolvito/controladores/asignacion_area/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
+                <input type="hidden" name="em_id" value="<?= $empleados[0]['EMPLEADO_ID'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
                         <label for="emp_nombre">Nombre_empleado</label>
@@ -46,10 +41,10 @@ require_once '../../modelos/Area.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <button type="submit" class="btn btn-info w-100">Guardar</button>
+                        <button type="submit" class="btn btn-warning w-100">Modificar</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <?php include_once '../../includes/footer.php'?>
+<?php include_once '../../includes/footer.php'?>
