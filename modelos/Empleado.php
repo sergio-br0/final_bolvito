@@ -28,7 +28,7 @@ class Empleado extends Conexion{
     }
 
     public function buscar(){
-        $sql = "SELECT * from empleados where emp_puesto = 1 ";
+        $sql = "SELECT * from empleados where emp_situacion = 1 ";
 
         if($this->emp_nombre != ''){
             $sql .= " and emp_nombre like '%$this->emp_nombre%' ";
