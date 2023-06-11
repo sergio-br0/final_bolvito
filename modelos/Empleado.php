@@ -54,8 +54,6 @@ class Empleado extends Conexion{
             $sql .= " and emp_id = $this->emp_id ";
         }
 
-
-
         $resultado = self::servir($sql);
         return $resultado;
     }

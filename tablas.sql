@@ -33,9 +33,10 @@ CREATE TABLE areas  (
 );
 
 CREATE TABLE asignacion_area  ( 
+    asig_id SERIAL NOT NULL,
     asig_area_id INTEGER NOT NULL,
     asig_emp_id INTEGER NOT NULL,
-    asig_emp_situacion smallint not null default 1,
+    asig_situacion smallint not null default 1,
     PRIMARY KEY(asig_area_id, asig_emp_id),
     FOREIGN KEY (asig_area_id) REFERENCES areas(area_id),
     FOREIGN KEY (asig_emp_id) REFERENCES empleados(emp_id)
