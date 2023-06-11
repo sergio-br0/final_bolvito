@@ -37,14 +37,14 @@ class Area extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE areastos SET area_nombre = '$this->area_nombre', area_sueldo = $this->area_sueldo where area_id = $this->area_id";
+        $sql = "UPDATE areas SET area_nombre = '$this->area_nombre' where area_id = $this->area_id";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function eliminar(){
-        $sql = "UPDATE areastos SET area_situacion = 0 where area_id = $this->area_id";
+        $sql = "UPDATE areas SET area_situacion = 0 where area_id = $this->area_id";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
