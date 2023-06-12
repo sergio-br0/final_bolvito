@@ -4,17 +4,10 @@ CREATE TABLE empleados (
     emp_dpi INTEGER NOT NULL,
     emp_id_puesto INTEGER NOT NULL,
     emp_edad INTEGER NOT NULL,
-    emp_id_sexo INTEGER NOT NULL,
+    emp_sexo VARCHAR (100) NOT NULL,
     emp_situacion smallint not null default 1,
     PRIMARY KEY(emp_id),
     FOREIGN KEY (emp_id_puesto) REFERENCES puestos(pue_id),
-    FOREIGN KEY (emp_id_sexo) REFERENCES sexo(sex_id)
-);
-
-CREATE TABLE sexos  ( 
-    sex_id SERIAL NOT NULL,
-    sex_descripcion VARCHAR(100) NOT NULL,
-    PRIMARY KEY(sex_id)
 );
 
 CREATE TABLE puestos  ( 
@@ -41,4 +34,5 @@ CREATE TABLE asignacion_area  (
     FOREIGN KEY (asig_area_id) REFERENCES areas(area_id),
     FOREIGN KEY (asig_emp_id) REFERENCES empleados(emp_id)
 );
+
 

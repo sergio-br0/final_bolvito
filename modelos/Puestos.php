@@ -7,9 +7,7 @@ class Puesto extends Conexion{
     public $pue_sueldo;
     public $pue_situacion;
 
-
-
-    public function __construct($args = [] )
+    public function __construct($args = [])
     {
         $this->pue_id = $args['pue_id'] ?? null;
         $this->pue_descripcion = $args['pue_descripcion'] ?? '';
@@ -18,7 +16,7 @@ class Puesto extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO puestos(pue_descripcion, pue_sueldo,) values('$this->pue_descripcion','$this->pue_sueldo')";
+        $sql = "INSERT INTO puestos (pue_descripcion, pue_sueldo) VALUES ('$this->pue_descripcion', '$this->pue_sueldo')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }

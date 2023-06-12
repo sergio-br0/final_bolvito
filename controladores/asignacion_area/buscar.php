@@ -32,7 +32,7 @@ try {
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>NO. </th>
+                            <th>NO.</th>
                             <th>AREA</th>
                             <th>EMPLEADO</th>
                             <th>MODIFICAR</th>
@@ -44,9 +44,9 @@ try {
                         <?php foreach($asignacion_areas as $key => $asignacion_area) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $asignacion_area['ASIG_AREA'] ?></td>
-                            <td><?= $asignacion_area['ASIG_EMPLEADO'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/asignacion_areas/modificar.php?asig_id=<?= $asignacion_area['ASIG_ID']?>">Modificar</a></td>
+                            <td><?= $asignacion_area['ASIG_AREA_ID'] ?></td>
+                            <td><?= $asignacion_area['ASIG_EMP_ID'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/asignacion_area/modificar.php?asig_id=<?= $asignacion_area['ASIG_ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/final_bolvito/controladores/asignacion_area/eliminar.php?asig_id=<?= $asignacion_area['ASIG_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>

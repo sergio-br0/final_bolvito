@@ -1,13 +1,9 @@
 <?php
-require_once '../../modelos/Empleado.php';
-require_once '../../modelos/Area.php';
+require_once '../../modelos/Puestos.php';
     try {
-        $empleado = new Empleado();
-        $producto = new Area();
-        $empleados = $empleado->buscar();
-        $areas = $area->buscar();
-            // var_dump($clientes);
-            // exit;
+        $puesto = new Puesto();
+        $puestos = $puesto->buscar();
+
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
@@ -21,7 +17,7 @@ require_once '../../modelos/Area.php';
     <div class="container">
         <h1 class="text-center">Ingresar Empleado</h1>
         <div class="row justify-content-center">
-            <form action="/final_bolvito/controladores/empleados/guardar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/final_bolvito/controladores/empleados/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="emp_nombre">Nombre del empleado</label>
@@ -34,13 +30,14 @@ require_once '../../modelos/Area.php';
                         <input type="number" name="emp_dpi" id="emp_dpi" class="form-control">
                     </div>
                 </div>
+            
                 <div class="row mb-3">
                     <div class="col">
                         <label for="emp_puesto">Puesto</label>
                         <select name="emp_puesto" id="emp_puesto" class="form-control">
                             <option value="">SELECCIONE...</option>
-                            <?php foreach ($empleados as $key => $empleado) : ?>
-                                <option value="<?= $empleado['EMP_ID'] ?>"><?= $empleado['EMP_PUESTO'] ?></option>
+                            <?php foreach ($puestos as $key => $puesto) : ?>
+                                <option  value="<?= $puesto['PUE_ID'] ?>"><?= $puesto['PUE_DESCRIPCION'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
@@ -52,15 +49,13 @@ require_once '../../modelos/Area.php';
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col">
-                        <label for="emp_sexo">Sexo</label>
+                <div class="col">
+                        <label for="emp_sexo">Genero del Empleado</label>
                         <select name="emp_sexo" id="emp_sexo" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($clientes as $key => $cliente) : ?>
-                                <option value="<?= $cliente['SEX_ID'] ?>"><?= $cliente['SEX_DESCRIPCION'] ?></option>
-                            <?php endforeach?>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
                         </select>
-                    </div>
+                </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">

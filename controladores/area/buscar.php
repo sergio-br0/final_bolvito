@@ -44,8 +44,7 @@ try {
                         <tr>
                             <td><?= $key + 1 ?></td>
                             <td><?= $area['AREA_NOMBRE'] ?></td>
-                            <td><?= $area['AREA_SUELDO'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/areas/modificar.php?area_id=<?= $area['AREA_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/area/modificar.php?area_id=<?= $area['AREA_ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/final_bolvito/controladores/area/eliminar.php?area_id=<?= $area['AREA_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
@@ -60,7 +59,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_bolvito/vistas/areas/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_bolvito/vistas/area/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

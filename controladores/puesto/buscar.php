@@ -47,7 +47,7 @@ try {
                             <td><?= $puesto['PUE_DESCRIPCION'] ?></td>
                             <td><?= $puesto['PUE_SUELDO'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/puestos/modificar.php?pue_id=<?= $puesto['PUE_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_bolvito/controladores/puestos/eliminar.php?pue_id=<?= $puesto['PUE_ID']?>">Eliminar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_bolvito/controladores/puesto/eliminar.php?pue_id=<?= $puesto['PUE_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
