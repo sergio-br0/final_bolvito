@@ -21,7 +21,7 @@
                             <a class="nav-link" href="/final_bolvito/vistas/empleados/buscar.php">Buscar empleado</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_bolvito/vistas/empleados/buscar.php">Organizacion Empresa</a>
+                            <a class="nav-link" href="/final_bolvito/controladores/empleados/organizacion_empresa.php">Organizacion Empresa</a>
                         </li>
                     </ul>
                 </li>

@@ -67,10 +67,11 @@ class Empleado extends Conexion{
     }
 
     public function buscar2(){
-        $sql = "SELECT e.emp_id, e.emp_nombre, e.emp_dpi, p.pue_descripcion, e.emp_edad, e.emp_sexo, a.area_nombre
+        $sql = "SELECT e.emp_id, e.emp_nombre, e.emp_dpi, p.pue_descripcion, e.emp_edad, a.area_nombre,  e.emp_sexo, p.pue_sueldo
         FROM empleados e
         JOIN puestos p ON e.emp_id_puesto = p.pue_id
         JOIN areas a ON e.emp_id_area = a.area_id";
+        ;
 
         if($this->emp_nombre != ''){
             $sql .= " and emp_nombre like '%$this->emp_nombre%' ";
