@@ -1,9 +1,10 @@
 <?php
 require '../../modelos/Asignacion_area.php';
-    try {
-        $asignacion_area = new Asignacion_area($_GET);
-
-        $asignacion_areas = $asignacion_area->buscar();
+        try {
+            $asignacion_area = new Asignacion_area();
+            $producto = new Area();
+            $asignacion_areas = $asignacion_area->buscar();
+            $areas = $area->buscar();
 
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -16,7 +17,7 @@ require '../../modelos/Asignacion_area.php';
         <h1 class="text-center">Modificar Asignacion de Empleados</h1>
         <div class="row justify-content-center">
             <form action="/final_bolvito/controladores/asignacion_area/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="em_id" value="<?= $empleados[0]['EMPLEADO_ID'] ?>" >
+                <input type="hidden" name="asig_id" value="<?= $asignacion_area[0]['ASIG_ID'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
                         <label for="emp_nombre">Nombre_empleado</label>

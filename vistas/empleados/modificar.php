@@ -20,7 +20,7 @@ require '../../modelos/Empleado.php';
         <h1 class="text-center">Modificar empleados</h1>
         <div class="row justify-content-center">
             <form action="/final_bolvito/controladores/empleados/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="em_id" value="<?= $empleados[0]['EMPLEADO_ID'] ?>" >
+                <input type="hidden" name="em_id" value="<?= $empleados[0]['EMP_ID'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
                         <label for="emp_nombre">Nombre del empleado</label>
