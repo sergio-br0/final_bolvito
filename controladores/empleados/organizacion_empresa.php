@@ -33,18 +33,20 @@ foreach ($empleados as $empleado) {
             border: 1px solid grey;
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 3px;
         }
+    
     </style>
-    <title>Resultados</title>
+    <title>Empleados</title>
 </head>
 <body>
+    <center><h2><b>EMPLEADOS INGESOFT S.A</b></h2></center>
     <div class="container">
         <?php foreach ($empleadosPorArea as $area => $empleadosArea) : ?>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="cuadro">
-                        <h2><?= $area ?></h2>
+                        <center><h3><?= $area ?></h3></center>
                         <table class="table table-bordered table-hover">
                             <thead class="table-dark">
                                 <tr>
