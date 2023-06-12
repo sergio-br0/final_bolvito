@@ -1,3 +1,4 @@
+
 <?php
 
 abstract class Conexion{
@@ -20,6 +21,8 @@ abstract class Conexion{
 
         return self::$conexion;
     }
+
+    
 
     public static function ejecutar($sql){
         // CONECTANDOSE A LA BD CON EL METODO CONECTAR
