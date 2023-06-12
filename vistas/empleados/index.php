@@ -1,7 +1,10 @@
 <?php
 require_once '../../modelos/Puestos.php';
+require_once '../../modelos/Area.php';
 
 try {
+    $area = new Area();
+    $areas = $area->buscar();
     $puesto = new Puesto();
     $puestos = $puesto->buscar();
 } catch (PDOException $e) {
@@ -30,7 +33,6 @@ try {
                     <input type="number" name="emp_dpi" id="emp_dpi" class="form-control">
                 </div>
             </div>
-
             <div class="row mb-3">
                 <div class="col">
                     <label for="emp_id_puesto">Puesto</label>
@@ -42,6 +44,7 @@ try {
                     </select>
                 </div>
             </div>
+            
             <div class="row mb-3">
                 <div class="col">
                     <label for="emp_edad">Edad</label>
@@ -54,6 +57,17 @@ try {
                     <select name="emp_sexo" id="emp_sexo" class="form-control">
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="emp_id_area">Area</label>
+                    <select name="emp_id_area" id="emp_id_area" class="form-control">
+                        <option value="">SELECCIONE...</option>
+                        <?php foreach ($areas as $key => $area) : ?>
+                            <option value="<?= $area['AREA_ID'] ?>"><?= $area['AREA_NOMBRE'] ?></option>
+                        <?php endforeach ?>
                     </select>
                 </div>
             </div>

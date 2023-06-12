@@ -1,11 +1,16 @@
 <?php
+
 require_once '../../modelos/Puestos.php';
 require '../../modelos/Empleado.php';
+require_once '../../modelos/Area.php';
     try {
         $empleado = new Empleado($_GET);
         $puesto = new Puesto();
-        $puestos = $puesto->buscar();
+        $area = new Area();
         $empleados = $empleado->buscar();
+        $puestos = $puesto->buscar();
+        $areas = $area->buscar();
+        
         // echo "<pre>";
         // var_dump($areas[0]['area_ID']);
         // echo "</pre>";
@@ -59,6 +64,17 @@ require '../../modelos/Empleado.php';
                     <select name="emp_sexo" id="emp_sexo" class="form-control">
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="emp_id_area">Area</label>
+                    <select name="emp_id_area" id="emp_id_area" class="form-control">
+                        <option value="">SELECCIONE...</option>
+                        <?php foreach ($areas as $key => $area) : ?>
+                            <option value="<?= $area['AREA_ID'] ?>"><?= $area['AREA_NOMBRE'] ?></option>
+                        <?php endforeach ?>
                     </select>
                 </div>
             </div>

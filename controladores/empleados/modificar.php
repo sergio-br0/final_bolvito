@@ -2,7 +2,7 @@
 require '../../modelos/Empleado.php';
 
 
-if ($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_sexo'] != '') {
+if ($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_sexo'] != '' && $_POST['emp_id_area'] != '') {
 
 
     try {

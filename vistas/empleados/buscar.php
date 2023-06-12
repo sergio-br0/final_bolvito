@@ -13,7 +13,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="emp_dpi">Precio del producto</label>
+                        <label for="emp_dpi">DPI del empleado</label>
                         <input type="number" name="emp_dpi" id="emp_dpi" class="form-control">
                     </div>
                 </div>
