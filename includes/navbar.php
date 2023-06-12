@@ -53,19 +53,6 @@
                     </ul>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Asignar Empleados
-                    </a>
-                    <ul class="dropdown-menu bg-dark">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_bolvito/vistas/asignacion_area/index.php">Asignar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_bolvito/vistas/asignacion_area/buscar.php">Buscar</a>
-                        </li>
-                    </ul>
-                </li>
 
             </ul>
         </div>

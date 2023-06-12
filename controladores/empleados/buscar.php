@@ -37,6 +37,7 @@ try {
                             <th>DPI</th>
                             <th>PUESTO</th>
                             <th>EDAD</th>
+                            <th>SEXO</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -50,6 +51,7 @@ try {
                             <td><?= $empleado['EMP_DPI'] ?></td>
                             <td><?= $empleado['EMP_ID_PUESTO'] ?></td>
                             <td><?= $empleado['EMP_EDAD'] ?></td>
+                            <td><?= $empleado['EMP_SEXO'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/final_bolvito/vistas/empleados/modificar.php?emp_id=<?= $empleado['EMP_ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/final_bolvito/controladores/empleados/eliminar.php?emp_id=<?= $empleado['EMP_ID']?>">Eliminar</a></td>
                         </tr>

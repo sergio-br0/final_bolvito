@@ -24,7 +24,7 @@ require '../../modelos/Area.php';
                 <div class="row mb-3">
                     <div class="col">
                         <label for="area_nombre">Nombre del area</label>
-                        <input type="text" name="area_nombre" id="area_nombre" class="form-control">
+                        <input type="text" name="area_nombre" id="area_nombre" class="form-control" value="<?= $areas[0]['AREA_NOMBRE'] ?>" >
                     </div>
                 </div>
                 <div class="row mb-3">

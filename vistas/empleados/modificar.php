@@ -1,11 +1,13 @@
 <?php
+require_once '../../modelos/Puestos.php';
 require '../../modelos/Empleado.php';
     try {
         $empleado = new Empleado($_GET);
-
+        $puesto = new Puesto();
+        $puestos = $puesto->buscar();
         $empleados = $empleado->buscar();
         // echo "<pre>";
-        // var_dump($empleados[0]['empleado_ID']);
+        // var_dump($areas[0]['area_ID']);
         // echo "</pre>";
         // exit;
         // $error = "NO se guardó correctamente";
@@ -17,50 +19,49 @@ require '../../modelos/Empleado.php';
 ?>
 <?php include_once '../../includes/header.php'?>
     <div class="container">
-        <h1 class="text-center">Modificar empleados</h1>
+        <h1 class="text-center">Modificar Empleados</h1>
         <div class="row justify-content-center">
             <form action="/final_bolvito/controladores/empleados/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="em_id" value="<?= $empleados[0]['EMP_ID'] ?>" >
+                <input type="hidden" name="emp_id" value="<?= $empleados[0]['EMP_ID'] ?>" >
                 <div class="row mb-3">
-                    <div class="col">
-                        <label for="emp_nombre">Nombre del empleado</label>
-                        <input type="text" name="emp_nombre" id="emp_nombre" class="form-control">
-                    </div>
+                <div class="col">
+                    <label for="emp_nombre">Nombre del empleado</label>
+                    <input type="text" name="emp_nombre" id="emp_nombre" class="form-control" value="<?= $empleados[0]['EMP_NOMBRE'] ?>">
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="emp_dpi">DPI</label>
-                        <input type="number" name="emp_dpi" id="emp_dpi" class="form-control">
-                    </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="emp_dpi">DPI</label>
+                    <input type="number" name="emp_dpi" id="emp_dpi" class="form-control" value="<?= $empleados[0]['EMP_DPI'] ?>">
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="emp_puesto">Puesto</label>
-                        <select name="emp_puesto" id="emp_puesto" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($empleados as $key => $empleado) : ?>
-                                <option value="<?= $empleado['EMP_ID'] ?>"><?= $empleado['EMP_PUESTO'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="emp_id_puesto">Puesto</label>
+                    <select name="emp_id_puesto" id="emp_id_puesto" class="form-control">
+                        <option value="">SELECCIONE...</option>
+                        <?php foreach ($puestos as $key => $puesto) : ?>
+                            <option value="<?= $puesto['PUE_ID'] ?>"><?= $puesto['PUE_DESCRIPCION'] ?></option>
+                        <?php endforeach ?>
+                    </select>
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="emp_edad">Edad</label>
-                        <input type="number" name="emp_edad" id="emp_edad" class="form-control">
-                    </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="emp_edad">Edad</label>
+                    <input type="number" name="emp_edad" id="emp_edad" class="form-control" value="<?= $empleados[0]['EMP_EDAD'] ?>">
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="emp_sexo">Sexo</label>
-                        <select name="emp_sexo" id="emp_sexo" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($clientes as $key => $cliente) : ?>
-                                <option value="<?= $cliente['SEX_ID'] ?>"><?= $cliente['SEX_DESCRIPCION'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="emp_sexo">Género del Empleado</label>
+                    <select name="emp_sexo" id="emp_sexo" class="form-control">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
                 </div>
+            </div>
                 <div class="row mb-3">
                     <div class="col">
                         <button type="submit" class="btn btn-warning w-100">Modificar</button>

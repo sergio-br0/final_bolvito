@@ -43,7 +43,7 @@ class Puesto extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE puestos SET pue_descripcion = '$this->pue_descripcion', pue_sueldo = $this->pue_sueldo where pue_id = $this->pue_id";
+        $sql = "UPDATE puestos SET pue_descripcion = '$this->pue_descripcion', pue_sueldo = '$this->pue_sueldo' where pue_id = $this->pue_id";
         
         $resultado = self::ejecutar($sql);
         return $resultado;

@@ -1,32 +1,20 @@
 <?php
-require '../../modelos/Empleado.php';
+require_once '../../modelos/Empleado.php';
 
-
-
-
-if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_sexo'] != ''){
-    
+if ($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_sexo'] != '') {
     try {
         $empleado = new Empleado($_POST);
         $resultado = $empleado->guardar();
-        $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
-    } catch (Exception $e2){
+    } catch (Exception $e2) {
         $error = $e2->getMessage();
     }
-}else{
+} else {
     $error = "Debe llenar todos los datos";
 }
-
-
-// if($resultado){
-//     echo "Guardado exitosamente";
-// }else{
-//     echo "Ocurrió un error: $error";
-// }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,16 +28,15 @@ if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puest
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <?php if($resultado): ?>
+                <?php if ($resultado): ?>
                     <div class="alert alert-success" role="alert">
                         Guardado exitosamente!
                     </div>
-                <?php else :?>
+                <?php else: ?>
                     <div class="alert alert-danger" role="alert">
-                        Ocurrió un error: <?= $error ?>
+                        Ocurrió un error al guardar: <?= $error ?>
                     </div>
                 <?php endif ?>
-              
             </div>
         </div>
         <div class="row">

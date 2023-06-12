@@ -59,12 +59,14 @@ class Empleado extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE empleados SET emp_nombre = '$this->emp_nombre', emp_dpi = $this->emp_dpi, emp_id_puesto = $this->emp_id_puesto, emp_edad = $this->emp_edad, emp_sexo = $this->emp_sexo where emp_id = $this->emp_id";
-        
+        $sql = "UPDATE empleados SET emp_nombre = '$this->emp_nombre', emp_dpi = '$this->emp_dpi', emp_id_puesto = '$this->emp_id_puesto', emp_edad = '$this->emp_edad', emp_sexo = '$this->emp_sexo' where emp_id = $this->emp_id";
+    
         $resultado = self::ejecutar($sql);
         return $resultado;
+        
     }
 
+    
     public function eliminar(){
         $sql = "UPDATE empleados SET emp_situacion = 0 where emp_id = $this->emp_id";
         

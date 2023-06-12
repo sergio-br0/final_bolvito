@@ -1,8 +1,8 @@
 <?php
-require '../../modelos/empleado.php';
+require '../../modelos/Empleado.php';
 
 
-    if($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_id_sexo'] != '' && $_POST['emp_id'] != ''){
+if ($_POST['emp_nombre'] != '' && $_POST['emp_dpi'] != '' && $_POST['emp_id_puesto'] != '' && $_POST['emp_edad'] != '' && $_POST['emp_sexo'] != '') {
 
 
     try {
@@ -53,11 +53,13 @@ require '../../modelos/empleado.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_bolvito/controladores/empleados/buscar.php?emp_nombre=<?= $_POST['emp_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_bolvito/controladores/empleados/buscar.php?area_nombre=<?= $_POST['area_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+
 
 
