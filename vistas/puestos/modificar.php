@@ -1,9 +1,9 @@
 <?php
 require '../../modelos/Puestos.php';
 try {
-    $puestos = new Puesto($_GET);
+    $puesto = new Puesto($_GET);
 
-    $puesto = $puesto->buscar();
+    $puestos = $puesto->buscar();
     // echo "<pre>";
     // var_dump($areas[0]['area_ID']);
     // echo "</pre>";
@@ -24,13 +24,13 @@ try {
             <div class="row mb-3">
                 <div class="col">
                     <label for="pue_descripcion">Nombre del Puesto</label>
-                    <input type="text" name="pue_descripcion" id="pue_descripcion" class="form-control">
+                    <input type="text" name="pue_descripcion" id="pue_descripcion" class="form-control" value="<?= $puestos[0]['PUE_DESCRIPCION'] ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
                     <label for="pue_sueldo">Sueldo</label>
-                    <input type="number" name="pue_sueldo" id="pue_sueldo" class="form-control">
+                    <input type="number" name="pue_sueldo" id="pue_sueldo" class="form-control" value="<?= $puestos[0]['PUE_SUELDO'] ?>">
                 </div>
             </div>
             <div class="row mb-3">
